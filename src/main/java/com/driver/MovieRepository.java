@@ -98,4 +98,18 @@ public class MovieRepository {
         }
     }
 
+    public String getDirectorByMovieName(String movieName){
+        if(MovieHashMap.containsKey(movieName)){
+            for(String directorName : DirectorMoviePair.keySet()){
+                List<String> moviesOfADirector = DirectorMoviePair.get(directorName);
+                for(String movie : moviesOfADirector){
+                    if(movie.equals(movieName))
+                        return directorName;
+                }
+            }
+            return "Director of given movie not available";
+        }
+        return "Movie not present in database";
+    }
+
 }

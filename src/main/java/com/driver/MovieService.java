@@ -59,4 +59,8 @@ public class MovieService {
 
     }
 
+    public String getDirectorByMovie(String movieName){
+        return repo.getDirectorByMovieName(movieName);
+    }
+
 }
